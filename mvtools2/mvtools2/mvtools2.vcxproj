@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3A71FDC-17D9-4CBE-AC9D-66B78EC6CD88}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mvtools2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\vsyasm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MVTOOLS2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MVTOOLS2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <StringPooling>true</StringPooling>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <YASM Include="Bilinear.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="CopyCode_mmx.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="cpu-32.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="fdct_mmx.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="Overlap_mmx.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="pixel-32.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="pixel-a.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="sad-a.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="SAD_iSSE.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="Variance_iSSE.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="x86inc-32.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="x86inc.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+    <YASM Include="x86util.asm">
+      <FileType>Document</FileType>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">-DPREFIX %(AdditionalOptions)</AdditionalOptions>
+    </YASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avisynth.h" />
+    <ClInclude Include="commonfunctions.h" />
+    <ClInclude Include="CopyCode.h" />
+    <ClInclude Include="cpu.h" />
+    <ClInclude Include="dct.h" />
+    <ClInclude Include="dctfftw.h" />
+    <ClInclude Include="dctint.h" />
+    <ClInclude Include="fftwlite.h" />
+    <ClInclude Include="GroupOfPlanes.h" />
+    <ClInclude Include="info.h" />
+    <ClInclude Include="Interpolation.h" />
+    <ClInclude Include="MaskFun.h" />
+    <ClInclude Include="MVAnalyse.h" />
+    <ClInclude Include="MVBlockFps.h" />
+    <ClInclude Include="MVCompensate.h" />
+    <ClInclude Include="MVDegrain1.h" />
+    <ClInclude Include="MVDegrain2.h" />
+    <ClInclude Include="MVDegrain3.h" />
+    <ClInclude Include="MVDepan.h" />
+    <ClInclude Include="MVFinest.h" />
+    <ClInclude Include="MVFlow.h" />
+    <ClInclude Include="MVFlowBlur.h" />
+    <ClInclude Include="MVFlowFps.h" />
+    <ClInclude Include="MVFlowInter.h" />
+    <ClInclude Include="MVInterface.h" />
+    <ClInclude Include="MVMask.h" />
+    <ClInclude Include="MVRecalculate.h" />
+    <ClInclude Include="MVSCDetection.h" />
+    <ClInclude Include="MVShow.h" />
+    <ClInclude Include="MVSuper.h" />
+    <ClInclude Include="overlap.h" />
+    <ClInclude Include="Padding.h" />
+    <ClInclude Include="PlaneOfBlocks.h" />
+    <ClInclude Include="SADFunctions.h" />
+    <ClInclude Include="SimpleResize.h" />
+    <ClInclude Include="Variance.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="yuy2planes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CopyCode.cpp" />
+    <ClCompile Include="cpu.cpp" />
+    <ClCompile Include="dctfftw.cpp" />
+    <ClCompile Include="dctint.cpp" />
+    <ClCompile Include="FakeBlockData.cpp" />
+    <ClCompile Include="FakeGroupOfPlanes.cpp" />
+    <ClCompile Include="FakePlaneOfBlocks.cpp" />
+    <ClCompile Include="GroupOfPlanes.cpp" />
+    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="Interpolation.cpp" />
+    <ClCompile Include="MaskFun.cpp" />
+    <ClCompile Include="MVAnalyse.cpp" />
+    <ClCompile Include="MVBlockFps.cpp" />
+    <ClCompile Include="MVClip.cpp" />
+    <ClCompile Include="MVClipArray.cpp" />
+    <ClCompile Include="MVCompensate.cpp" />
+    <ClCompile Include="MVDegrain1.cpp" />
+    <ClCompile Include="MVDegrain2.cpp" />
+    <ClCompile Include="MVDegrain3.cpp" />
+    <ClCompile Include="MVDepan.cpp" />
+    <ClCompile Include="MVFilter.cpp" />
+    <ClCompile Include="MVFinest.cpp" />
+    <ClCompile Include="MVFlow.cpp" />
+    <ClCompile Include="MVFlowBlur.cpp" />
+    <ClCompile Include="MVFlowFps.cpp" />
+    <ClCompile Include="MVFlowInter.cpp" />
+    <ClCompile Include="MVFrame.cpp" />
+    <ClCompile Include="MVMask.cpp" />
+    <ClCompile Include="MVRecalculate.cpp" />
+    <ClCompile Include="MVSCDetection.cpp" />
+    <ClCompile Include="MVShow.cpp" />
+    <ClCompile Include="MVSuper.cpp" />
+    <ClCompile Include="overlap.cpp" />
+    <ClCompile Include="Padding.cpp" />
+    <ClCompile Include="PlaneOfBlocks.cpp" />
+    <ClCompile Include="SADFunctions.cpp" />
+    <ClCompile Include="SimpleResize.cpp" />
+    <ClCompile Include="Variance.cpp" />
+    <ClCompile Include="yuy2planes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mvtools.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\vsyasm.targets" />
+  </ImportGroup>
+</Project>
