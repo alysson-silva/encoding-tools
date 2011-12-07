@@ -1,0 +1,11 @@
+*.cache
+*.ncb
+*.opensdf
+*.orig
+*.sdf
+*.suo
+*.user
+Debug/*
+Release/*
+bin/*
+ipch/*

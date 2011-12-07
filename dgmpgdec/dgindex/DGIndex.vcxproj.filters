@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{dcc7c10a-58c5-4012-a8e5-480fb6c7382d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d7dc743b-e3e3-498e-af6d-88955914b787}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{ddcdbb94-7ebd-4ba9-a3cf-5713e2af79b9}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="AC3Dec">
+      <UniqueIdentifier>{ce9e9fec-4c82-4d5a-aa0c-de8c0dfa4c74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="d2vparse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getbit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gethdr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getpic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="idctfpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="idctref.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="initial_parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="motion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpeg2dec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="norm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_cli.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="store.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strverscmp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wavefs44.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\bit_allocate.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\bitstream.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\coeff.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\crc.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\decode.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\downmix.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\exponent.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\imdct.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\parse.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\rematrix.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+    <ClCompile Include="AC3Dec\sanity_check.cpp">
+      <Filter>AC3Dec</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="getbit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="skl_nasm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AC3Dec\ac3.h">
+      <Filter>AC3Dec</Filter>
+    </ClInclude>
+    <ClInclude Include="AC3Dec\bitstream.h">
+      <Filter>AC3Dec</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="gui.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="movie.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="idctmmx.asm" />
+    <CustomBuild Include="simple_idct_mmx.asm" />
+    <CustomBuild Include="skl_dct_sse.asm" />
+  </ItemGroup>
+</Project>
